@@ -55,7 +55,7 @@ export async function estimateSalary(
      let data;
      try {
        data = JSON.parse(responseText);
-     } catch (e) {
+     } catch (e: any) {
        return { 
          success: false, 
          error: responseText || 'Có lỗi xảy ra khi phân tích phản hồi từ server'

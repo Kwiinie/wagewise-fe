@@ -1,15 +1,16 @@
 'use client';
 import { estimateSalary, getAllProvinces, getProvinceDetails } from "@/lib/province-services";
+import { District, Province, SalaryResponse } from "@/types";
 import { useEffect, useState } from "react";
 
 const CVSalaryEstimator = () => {
-  const [file, setFile] = useState(null);
-  const [isUploading, setIsUploading] = useState(false);
+   const [file, setFile] = useState<File | null>(null);
+      const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [error, setError] = useState('');
   
-  const [provinces, setProvinces] = useState([]);
-  const [districts, setDistricts] = useState([]);
+  const [provinces, setProvinces] = useState<Province[]>([]);
+  const [districts, setDistricts] = useState<District[]>([]);
   const [provinceCode, setProvinceCode] = useState('');
   const [provinceName, setProvinceName] = useState('');
   const [districtCode, setDistrictCode] = useState('');
@@ -18,7 +19,7 @@ const CVSalaryEstimator = () => {
   const [isLoadingProvinces, setIsLoadingProvinces] = useState(true);
   const [isLoadingDistricts, setIsLoadingDistricts] = useState(false);
   
-  const [salaryResponse, setSalaryResponse] = useState(null);
+  const [salaryResponse, setSalaryResponse] = useState<SalaryResponse | null>(null);
 
   useEffect(() => {
     const fetchProvinces = async () => {
@@ -69,7 +70,7 @@ const CVSalaryEstimator = () => {
     fetchDistricts();
   }, [provinceCode]);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e:any) => {
     const selectedFile = e.target.files?.[0];
     
     if (selectedFile && selectedFile.type === 'application/pdf') {
@@ -86,7 +87,7 @@ const CVSalaryEstimator = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     
     if (!file) {
