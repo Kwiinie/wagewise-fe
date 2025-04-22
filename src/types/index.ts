@@ -16,4 +16,5 @@ export interface SalaryResponse {
    location: string;
    estimatedSalary: number;
    salaryReason: string;
+   improvementSuggestions: string;
 }
