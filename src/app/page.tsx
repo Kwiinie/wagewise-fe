@@ -65,7 +65,7 @@ export default function Home() {
               </p>
               <p className="flex items-start">
                 <span className="inline-block w-5 h-5 rounded-full bg-purple-500/30 backdrop-blur-sm mr-2 flex-shrink-0 mt-0.5"></span>
-                <span>Chúng tôi không chia sẻ thông tin cá nhân của bạn với bên thứ ba.</span>
+                <span>CV của bạn được sử dụng để phục vụ mục đích phân tích, nâng cao chất lượng dịch vụ.</span>
               </p>
               <p className="flex items-start">
                 <span className="inline-block w-5 h-5 rounded-full bg-purple-500/30 backdrop-blur-sm mr-2 flex-shrink-0 mt-0.5"></span>
